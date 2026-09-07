@@ -1,0 +1,12 @@
+fastapi==0.115.0
+mangum==0.18.0
+boto3==1.35.0
+pydantic==2.9.0
+python-jose[cryptography]==3.3.0
+requests==2.32.3
+razorpay==2.0.1
+
+# Dev-only (local uvicorn server) — not needed in the Lambda deployment
+# package; SAM builds from this file too, so keep it split if that starts
+# to matter (e.g. a requirements-dev.txt).
+uvicorn[standard]==0.30.6

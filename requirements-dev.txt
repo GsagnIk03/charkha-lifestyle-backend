@@ -1,0 +1,3 @@
+# Only needed for local_dev.py (offline mode) and for writing tests later.
+# Not part of the Lambda deployment package.
+moto[dynamodb]==5.0.13
