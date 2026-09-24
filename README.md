@@ -105,3 +105,6 @@ prints — `ApiFunctionUrl`, `FrontendUrl`, `UserPoolId`, `UserPoolClientId`
   s3://<bucket>` and invalidate the CloudFront cache — pass those in as
   secrets/env vars in whatever CI you set up there, since this repo's
   stack is the only place they're created.
+  s3://<bucket>` and invalidate the CloudFront cache — pass those in as
+  secrets/env vars in whatever CI you set up there, since this repo's
+  stack is the only place they're created.
