@@ -10,7 +10,7 @@ reflects how auth or the database really behave once deployed.
 Usage:
     pip install -r requirements.txt -r requirements-dev.txt
     python local_dev.py
-Then point the frontend (the separate atelier-frontend repo) at
+Then point the frontend (the separate charkha-lifestyle-frontend repo) at
 http://localhost:8000 — its .env.example already defaults to that.
 """
 
@@ -20,9 +20,9 @@ os.environ["LOCAL_DEV"] = "true"
 os.environ.setdefault("AWS_REGION", "ap-south-1")
 os.environ.setdefault("AWS_ACCESS_KEY_ID", "testing")
 os.environ.setdefault("AWS_SECRET_ACCESS_KEY", "testing")
-os.environ.setdefault("PRODUCTS_TABLE", "AtelierProducts")
-os.environ.setdefault("INVENTORY_REQUESTS_TABLE", "AtelierInventoryChangeRequests")
-os.environ.setdefault("ORDERS_TABLE", "AtelierOrders")
+os.environ.setdefault("PRODUCTS_TABLE", "CharkhaLifestyleProducts")
+os.environ.setdefault("INVENTORY_REQUESTS_TABLE", "CharkhaLifestyleInventoryChangeRequests")
+os.environ.setdefault("ORDERS_TABLE", "CharkhaLifestyleOrders")
 os.environ.setdefault("ALLOWED_ORIGINS", "http://localhost:5173")
 os.environ.setdefault("RAZORPAY_KEY_ID", "rzp_test_local")
 os.environ.setdefault("RAZORPAY_KEY_SECRET", "local_dev_only")
@@ -109,7 +109,7 @@ if __name__ == "__main__":
 
     from app.main import app
 
-    print("\n--- Atelier backend: LOCAL DEV MODE ---")
+    print("\n--- Charkha Lifestyle backend: LOCAL DEV MODE ---")
     print("In-memory fake DynamoDB (moto), seeded with 4 sample products.")
     print("Auth is bypassed — every request is treated as a signed-in owner.")
     print("Data resets on restart. Never run with LOCAL_DEV=true anywhere real.\n")
