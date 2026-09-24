@@ -1,4 +1,4 @@
-# Atelier — Infrastructure (AWS SAM)
+# Charkha Lifestyle — Infrastructure (AWS SAM)
 
 Defines every AWS resource in the [architecture blueprint](https://claude.ai/code/artifact/12f6ab68-e085-4a6e-a121-054fd3b25b0a):
 the Lambda function (Function URL, no API Gateway), three DynamoDB tables
