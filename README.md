@@ -1,4 +1,4 @@
-# Atelier — Backend
+# Charkha Lifestyle — Backend
 
 FastAPI app, deployed to AWS Lambda via a Function URL (no API Gateway —
 see the [architecture blueprint](https://claude.ai/code/artifact/12f6ab68-e085-4a6e-a121-054fd3b25b0a)
