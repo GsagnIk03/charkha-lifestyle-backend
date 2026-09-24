@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.routers import inventory_requests, orders, products
 
-app = FastAPI(title="Atelier API")
+app = FastAPI(title="Charkha Lifestyle API")
 
 allowed_origins = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
 
