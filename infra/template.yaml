@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  Atelier — serverless stack built entirely on AWS's permanent Always Free
+  Charkha Lifestyle — serverless stack built entirely on AWS's permanent Always Free
   allowances (no EC2, no RDS, no API Gateway). See the architecture
   blueprint for the reasoning:
   https://claude.ai/code/artifact/12f6ab68-e085-4a6e-a121-054fd3b25b0a
@@ -92,7 +92,7 @@ Resources:
   ProductsTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: !Sub "Atelier-Products-${Stage}"
+      TableName: !Sub "CharkhaLifestyle-Products-${Stage}"
       BillingMode: PROVISIONED
       ProvisionedThroughput:
         ReadCapacityUnits: 5
@@ -107,7 +107,7 @@ Resources:
   InventoryChangeRequestsTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: !Sub "Atelier-InventoryChangeRequests-${Stage}"
+      TableName: !Sub "CharkhaLifestyle-InventoryChangeRequests-${Stage}"
       BillingMode: PROVISIONED
       ProvisionedThroughput:
         ReadCapacityUnits: 5
@@ -122,7 +122,7 @@ Resources:
   OrdersTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: !Sub "Atelier-Orders-${Stage}"
+      TableName: !Sub "CharkhaLifestyle-Orders-${Stage}"
       BillingMode: PROVISIONED
       ProvisionedThroughput:
         ReadCapacityUnits: 5
@@ -139,7 +139,7 @@ Resources:
   UserPool:
     Type: AWS::Cognito::UserPool
     Properties:
-      UserPoolName: !Sub "atelier-${Stage}"
+      UserPoolName: !Sub "charkha-lifestyle-${Stage}"
       UsernameAttributes: [email]
       AutoVerifiedAttributes: [email]
       Policies:
@@ -165,7 +165,7 @@ Resources:
     Type: AWS::Cognito::UserPoolDomain
     Properties:
       UserPoolId: !Ref UserPool
-      Domain: !Sub "atelier-${AWS::AccountId}"
+      Domain: !Sub "charkha-lifestyle-${AWS::AccountId}"
 
   # Google sign-in is optional at deploy time — only created if GoogleClientId
   # is supplied. Get these from Google Cloud Console > APIs & Services >
@@ -190,7 +190,7 @@ Resources:
     Type: AWS::Cognito::UserPoolClient
     Properties:
       UserPoolId: !Ref UserPool
-      ClientName: !Sub "atelier-web-${Stage}"
+      ClientName: !Sub "charkha-lifestyle-web-${Stage}"
       GenerateSecret: false
       ExplicitAuthFlows:
         - ALLOW_USER_PASSWORD_AUTH
@@ -212,7 +212,7 @@ Resources:
   FrontendBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub "atelier-frontend-${Stage}-${AWS::AccountId}"
+      BucketName: !Sub "charkha-lifestyle-frontend-${Stage}-${AWS::AccountId}"
       PublicAccessBlockConfiguration:
         BlockPublicAcls: true
         BlockPublicPolicy: true
@@ -223,7 +223,7 @@ Resources:
     Type: AWS::CloudFront::OriginAccessControl
     Properties:
       OriginAccessControlConfig:
-        Name: !Sub "atelier-frontend-oac-${Stage}"
+        Name: !Sub "charkha-lifestyle-frontend-oac-${Stage}"
         OriginAccessControlOriginType: s3
         SigningBehavior: always
         SigningProtocol: sigv4
@@ -277,7 +277,7 @@ Resources:
   MediaBucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: !Sub "atelier-media-${Stage}-${AWS::AccountId}"
+      BucketName: !Sub "charkha-lifestyle-media-${Stage}-${AWS::AccountId}"
       PublicAccessBlockConfiguration:
         BlockPublicAcls: true
         BlockPublicPolicy: true
@@ -293,7 +293,7 @@ Resources:
     Type: AWS::CloudFront::OriginAccessControl
     Properties:
       OriginAccessControlConfig:
-        Name: !Sub "atelier-media-oac-${Stage}"
+        Name: !Sub "charkha-lifestyle-media-oac-${Stage}"
         OriginAccessControlOriginType: s3
         SigningBehavior: always
         SigningProtocol: sigv4
@@ -340,12 +340,12 @@ Resources:
   BillingAlarmTopic:
     Type: AWS::SNS::Topic
     Properties:
-      TopicName: !Sub "atelier-billing-alerts-${Stage}"
+      TopicName: !Sub "charkha-lifestyle-billing-alerts-${Stage}"
 
   BillingAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
-      AlarmName: !Sub "atelier-spend-over-1-usd-${Stage}"
+      AlarmName: !Sub "charkha-lifestyle-spend-over-1-usd-${Stage}"
       Namespace: AWS/Billing
       MetricName: EstimatedCharges
       Dimensions:
