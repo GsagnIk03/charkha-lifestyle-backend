@@ -23,12 +23,12 @@ def _resource():
 
 
 def products_table():
-    return _resource().Table(os.environ.get("PRODUCTS_TABLE", "AtelierProducts"))
+    return _resource().Table(os.environ.get("PRODUCTS_TABLE", "CharkhaLifestyleProducts"))
 
 
 def inventory_requests_table():
-    return _resource().Table(os.environ.get("INVENTORY_REQUESTS_TABLE", "AtelierInventoryChangeRequests"))
+    return _resource().Table(os.environ.get("INVENTORY_REQUESTS_TABLE", "CharkhaLifestyleInventoryChangeRequests"))
 
 
 def orders_table():
-    return _resource().Table(os.environ.get("ORDERS_TABLE", "AtelierOrders"))
+    return _resource().Table(os.environ.get("ORDERS_TABLE", "CharkhaLifestyleOrders"))
