@@ -70,6 +70,18 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
           aws-region: ${{ vars.AWS_REGION }}
+          # By default this action attaches ~7 session tags (repo, actor,
+          # branch, etc.) to the AssumeRoleWithWebIdentity call, which
+          # requires the role's trust policy to also allow sts:TagSession
+          # — without it, AWS denies the *entire* AssumeRoleWithWebIdentity
+          # call (session tags aren't a separate API call, they're a
+          # parameter on this one), which is exactly the generic "Not
+          # authorized to perform sts:AssumeRoleWithWebIdentity" error we
+          # were hitting even though the OIDC provider, trust policy `sub`
+          # conditions, and role ARN were all already correct. We don't
+          # need these tags for anything, so skip them outright instead of
+          # depending on the trust policy granting sts:TagSession too.
+          role-skip-session-tagging: true
 
       - name: cdk deploy
         working-directory: infra
