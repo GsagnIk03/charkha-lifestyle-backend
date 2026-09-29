@@ -30,15 +30,40 @@ def list_products(
     if status_filter:
         filters.append(Attr("status").eq(status_filter.value))
 
-    scan_kwargs: dict = {"Limit": limit}
+    filter_expression = None
     if filters:
-        expr = filters[0]
+        filter_expression = filters[0]
         for f in filters[1:]:
-            expr = expr & f
-        scan_kwargs["FilterExpression"] = expr
+            filter_expression = filter_expression & f
 
-    result = products_table().scan(**scan_kwargs)
-    return result.get("Items", [])
+    # DynamoDB's own `Limit` caps how many items are *scanned* before a
+    # FilterExpression is applied, not how many survive it — a scan with
+    # Limit=4 and a status filter can come back with fewer than 4 matches
+    # even when far more than 4 matching items exist in the table, simply
+    # because some of the 4 raw items it happened to examine didn't pass
+    # the filter (e.g. "New Arrivals" on the homepage asking for
+    # status=live&limit=4 was silently returning as few as 3 items despite
+    # ~88 of the 100 seeded products being live). To actually return up to
+    # `limit` matching items, keep paging through the table with
+    # ExclusiveStartKey/LastEvaluatedKey until enough matches are collected
+    # or the table is exhausted.
+    items: list[dict] = []
+    last_evaluated_key = None
+    while len(items) < limit:
+        scan_kwargs: dict = {}
+        if filter_expression is not None:
+            scan_kwargs["FilterExpression"] = filter_expression
+        if last_evaluated_key:
+            scan_kwargs["ExclusiveStartKey"] = last_evaluated_key
+
+        result = products_table().scan(**scan_kwargs)
+        items.extend(result.get("Items", []))
+
+        last_evaluated_key = result.get("LastEvaluatedKey")
+        if not last_evaluated_key:
+            break
+
+    return items[:limit]
 
 
 @router.get("/{product_id}", response_model=Product)
