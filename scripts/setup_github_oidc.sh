@@ -20,6 +20,18 @@ GITHUB_REPO="charkha-lifestyle-backend"
 # default branch is "master" (checked via github.com/GsagnIk03/charkha-lifestyle-backend).
 GITHUB_BRANCH="master"
 ROLE_NAME="github-actions-cdk-deploy-charkha"
+# GitHub's permanent numeric IDs for this account and repo. Since April
+# 2026, GitHub Actions can issue OIDC tokens with these IDs baked into the
+# subject claim (repo:ORG@ORG_ID/REPO@REPO_ID:... instead of plain
+# repo:ORG/REPO:...) as an anti-impersonation hardening measure — see
+# https://github.blog/changelog/2026-04-23-immutable-subject-claims-for-github-actions-oidc-tokens/
+# Confirmed via CloudTrail (Event history -> AssumeRoleWithWebIdentity ->
+# userIdentity.userName) that this repo's tokens use the new format, so
+# both forms are trusted below to be safe either way. These IDs are
+# permanent for the life of the account/repo (unless transferred), so
+# there's no need to ever change them here.
+GITHUB_ORG_ID="66160965"
+GITHUB_REPO_ID="1386047041"
 # ------------------------
 
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
@@ -58,7 +70,9 @@ TRUST_POLICY=$(cat <<EOF
         "StringLike": {
           "${OIDC_URL}:sub": [
             "repo:${GITHUB_ORG}/${GITHUB_REPO}:ref:refs/heads/${GITHUB_BRANCH}",
-            "repo:${GITHUB_ORG}/${GITHUB_REPO}:environment:production"
+            "repo:${GITHUB_ORG}/${GITHUB_REPO}:environment:production",
+            "repo:${GITHUB_ORG}@${GITHUB_ORG_ID}/${GITHUB_REPO}@${GITHUB_REPO_ID}:ref:refs/heads/${GITHUB_BRANCH}",
+            "repo:${GITHUB_ORG}@${GITHUB_ORG_ID}/${GITHUB_REPO}@${GITHUB_REPO_ID}:environment:production"
           ]
         }
       }
@@ -67,14 +81,19 @@ TRUST_POLICY=$(cat <<EOF
 }
 EOF
 )
-# Two allowed "sub" shapes on purpose: GitHub issues a DIFFERENT subject
-# claim depending on whether the job targets a GitHub Environment.
-#   - No `environment:` on the job -> repo:ORG/REPO:ref:refs/heads/BRANCH
-#   - `environment: production` on the job (as deploy-backend.yml has,
-#     for the optional manual-approval gate) -> repo:ORG/REPO:environment:production
-# deploy-backend.yml sets `environment: production`, so in practice only
-# the second one is ever actually issued today -- but keeping both here
-# means this still works if that `environment:` line is ever removed.
+# Four allowed "sub" shapes on purpose -- two independent axes:
+#   1. Whether the job targets a GitHub Environment:
+#      - No `environment:` on the job -> repo:ORG/REPO:ref:refs/heads/BRANCH
+#      - `environment: production` (as deploy_backend.yaml has, for the
+#        optional manual-approval gate) -> repo:ORG/REPO:environment:production
+#   2. Whether GitHub's new immutable-ID subject claim format applies to
+#      this repo (see the GITHUB_ORG_ID/GITHUB_REPO_ID comment above) ->
+#      repo:ORG@ORG_ID/REPO@REPO_ID:... instead of plain repo:ORG/REPO:...
+# deploy_backend.yaml sets `environment: production`, and this repo has
+# been confirmed (via CloudTrail) to use the immutable-ID format, so in
+# practice only the 4th pattern below is ever actually issued today -- but
+# keeping all four means this still works if the `environment:` line is
+# ever removed or GitHub's rollout changes which format is used.
 #
 # sts:TagSession is in the Action list because aws-actions/configure-aws-
 # credentials@v4 attaches session tags (repo/workflow/actor/branch, etc.)
