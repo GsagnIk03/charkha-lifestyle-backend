@@ -49,16 +49,41 @@ TRUST_POLICY=$(cat <<EOF
     {
       "Effect": "Allow",
       "Principal": { "Federated": "${OIDC_ARN}" },
-      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Action": [
+        "sts:AssumeRoleWithWebIdentity",
+        "sts:TagSession"
+      ],
       "Condition": {
         "StringEquals": { "${OIDC_URL}:aud": "sts.amazonaws.com" },
-        "StringLike": { "${OIDC_URL}:sub": "repo:${GITHUB_ORG}/${GITHUB_REPO}:ref:refs/heads/${GITHUB_BRANCH}" }
+        "StringLike": {
+          "${OIDC_URL}:sub": [
+            "repo:${GITHUB_ORG}/${GITHUB_REPO}:ref:refs/heads/${GITHUB_BRANCH}",
+            "repo:${GITHUB_ORG}/${GITHUB_REPO}:environment:production"
+          ]
+        }
       }
     }
   ]
 }
 EOF
 )
+# Two allowed "sub" shapes on purpose: GitHub issues a DIFFERENT subject
+# claim depending on whether the job targets a GitHub Environment.
+#   - No `environment:` on the job -> repo:ORG/REPO:ref:refs/heads/BRANCH
+#   - `environment: production` on the job (as deploy-backend.yml has,
+#     for the optional manual-approval gate) -> repo:ORG/REPO:environment:production
+# deploy-backend.yml sets `environment: production`, so in practice only
+# the second one is ever actually issued today -- but keeping both here
+# means this still works if that `environment:` line is ever removed.
+#
+# sts:TagSession is in the Action list because aws-actions/configure-aws-
+# credentials@v4 attaches session tags (repo/workflow/actor/branch, etc.)
+# to the AssumeRoleWithWebIdentity call by default. STS rejects the ENTIRE
+# call -- with the same generic "Not authorized to perform
+# sts:AssumeRoleWithWebIdentity" error, not a tagging-specific one -- if
+# the trust policy doesn't also allow sts:TagSession. Without this, you'd
+# see the exact right OIDC provider, exact right `sub` match, and exact
+# right role ARN all still fail.
 
 # Least-privilege for CDK: this role only gets permission to assume the
 # CDK bootstrap roles (created by `cdk bootstrap`, already present since
