@@ -8,7 +8,7 @@ from botocore.exceptions import ClientError
 from fastapi import APIRouter, Depends, HTTPException, status
 
 from app.auth import require_owner, verify_token
-from app.db import AWS_REGION, inventory_requests_table, products_table
+from app.db import AWS_REGION, inventory_requests_table, products_table, to_item
 from app.models import (
     ChangeRequestStatus,
     InventoryChangeDecision,
@@ -39,7 +39,7 @@ def submit_request(payload: InventoryChangeRequestCreate, claims: dict = Depends
         submitted_by=submitted_by,
         **payload.model_dump(),
     )
-    inventory_requests_table().put_item(Item=change_request.model_dump())
+    inventory_requests_table().put_item(Item=to_item(change_request))
     # TODO: notify the owner via SES once that's wired up.
     return change_request
 

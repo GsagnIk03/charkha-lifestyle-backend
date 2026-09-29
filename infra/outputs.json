@@ -1,0 +1,9 @@
+{
+  "charkha-lifestyle-dev": {
+    "UserPoolClientId": "5ter8hvp514tjd6u3cu6dn0fha",
+    "MediaUrl": "https://d1smiqf7bvs0dc.cloudfront.net",
+    "UserPoolId": "ap-south-1_KFjNGZF7d",
+    "UserPoolHostedUiDomain": "https://charkha-lifestyle-605599552093.auth.ap-south-1.amazoncognito.com",
+    "ApiFunctionUrl": "https://fkfdnt63e7n5bwkcfi6zhzonji0bvwte.lambda-url.ap-south-1.on.aws/"
+  }
+}

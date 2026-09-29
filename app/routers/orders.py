@@ -7,7 +7,7 @@ import razorpay
 from fastapi import APIRouter, Depends
 
 from app.auth import verify_token
-from app.db import orders_table, products_table
+from app.db import orders_table, products_table, to_item
 from app.models import Order, OrderCreate
 
 router = APIRouter(prefix="/orders", tags=["orders"])
@@ -49,7 +49,7 @@ def create_order(payload: OrderCreate, claims: dict = Depends(verify_token)):
         amount=amount,
         razorpay_order_id=razorpay_order["id"],
     )
-    orders_table().put_item(Item=order.model_dump())
+    orders_table().put_item(Item=to_item(order))
     return order
 
 

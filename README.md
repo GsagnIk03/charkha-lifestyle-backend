@@ -5,25 +5,26 @@ see the [architecture blueprint](https://claude.ai/code/artifact/12f6ab68-e085-4
 for why). Runs the same either way: `uvicorn` locally, `lambda_handler.py`
 (via [Mangum](https://github.com/jordaneremieff/mangum)) in AWS.
 
-This repo also owns `infra/` — the AWS SAM template that defines every
-resource for the whole project, including the S3 bucket and CloudFront
-distribution that serve the **frontend** (a separate repo). That split is
-deliberate: infrastructure lives with the backend/deploy tooling, and the
-frontend repo just builds static files and ships them to the bucket this
-repo's stack creates. See "Deploy" below for how the two connect.
+This repo also owns `infra/` — an AWS CDK (Python) app that defines the
+backend's AWS resources: the Lambda function, DynamoDB tables, Cognito
+pool, and the S3+CloudFront pair for product media. The **frontend** (a
+separate repo) doesn't deploy through this stack — it's hosted on
+[Vercel](https://vercel.com) instead, which builds and deploys it
+straight from GitHub. See `infra/README.md` for why, and "Deploy" below
+for how the two connect.
 
 ## Local setup — against real AWS
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate      # Windows Git Bash / PowerShell: source .venv/Scripts/activate
-pip install -r requirements.txt
+pip install -r requirements.txt -r requirements-dev.txt
 cp .env.example .env           # fill in DynamoDB table names, Cognito pool, Razorpay keys
 uvicorn app.main:app --reload
 ```
 
 This talks to real DynamoDB tables and a real Cognito pool — deploy those
-first (`sam deploy`, see `infra/README.md`) and copy their names/IDs into
+first (`cdk deploy`, see `infra/README.md`) and copy their names/IDs into
 `.env`.
 
 ## Local setup — fully offline (no AWS account needed)
@@ -47,7 +48,7 @@ how auth or persistence really behave once deployed.
 
 ```
 app/            FastAPI application code
-infra/          AWS SAM template — every resource for the whole project
+infra/          AWS CDK (Python) app — backend resources only (frontend is on Vercel)
 lambda_handler.py   Lambda entry point (Mangum-wrapped FastAPI app)
 local_dev.py    Offline dev server (in-memory DB, bypassed auth)
 ```
@@ -83,28 +84,21 @@ local_dev.py    Offline dev server (in-memory DB, bypassed auth)
 
 ## Deploy
 
-See `infra/README.md` for the full sequence and the one manual AWS
-Console step (billing alerts) that can't be scripted. Broadly:
+See `infra/README.md` for the full sequence, the one manual AWS Console
+step (an AWS Budget as the spend trip-wire) that can't be scripted, how
+the frontend's Vercel deploy and your GoDaddy domain fit in, and a
+"Troubleshooting / operating notes" section worth reading before _any_
+deploy, not just the first. Broadly:
 
 ```bash
 cd infra
-sam build
-sam deploy --guided
+cdk deploy
 ```
 
-That creates the Lambda function, DynamoDB tables, Cognito pool, **and**
-the frontend's S3 bucket + CloudFront distribution. Take the `Outputs` it
-prints — `ApiFunctionUrl`, `FrontendUrl`, `UserPoolId`, `UserPoolClientId`
-— and:
-
-- Put `ApiFunctionUrl` into the **frontend** repo's `.env` as
-  `VITE_API_BASE_URL`.
-- The frontend repo's deploy step needs the `FrontendBucket` name and
-  `FrontendDistribution` ID from this stack (`aws cloudformation
-  describe-stacks` or the console) to run `aws s3 sync dist/
-  s3://<bucket>` and invalidate the CloudFront cache — pass those in as
-  secrets/env vars in whatever CI you set up there, since this repo's
-  stack is the only place they're created.
-  s3://<bucket>` and invalidate the CloudFront cache — pass those in as
-  secrets/env vars in whatever CI you set up there, since this repo's
-  stack is the only place they're created.
+That creates the Lambda function, DynamoDB tables, Cognito pool, and the
+media S3 bucket + CloudFront distribution — no frontend hosting here
+anymore, that's Vercel's job (see `infra/README.md`). Take the `Outputs`
+it prints — `ApiFunctionUrl`, `UserPoolId`, `UserPoolClientId`,
+`UserPoolHostedUiDomain`, `MediaUrl` — and put `ApiFunctionUrl` into the
+**frontend** repo's Vercel project as the `VITE_API_BASE_URL` environment
+variable.

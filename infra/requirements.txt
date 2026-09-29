@@ -1,0 +1,17 @@
+# For the CDK app itself (infra/app.py, infra/charkha_lifestyle/) — has
+# nothing to do with the Lambda's own requirements.txt one level up, which
+# defines what actually ships to AWS. Install these into their own venv:
+#
+#   cd infra
+#   python -m venv .venv
+#   source .venv/bin/activate   # Windows Git Bash / PowerShell: source .venv/Scripts/activate
+#   pip install -r requirements.txt
+#
+# aws-cdk-lib's version and aws-cdk.aws-lambda-python-alpha's version must
+# match (the "alpha" package versions its releases in lockstep with
+# aws-cdk-lib, e.g. 2.170.0 / 2.170.0a0) — if you ever bump one, bump the
+# other to the same base version.
+aws-cdk-lib==2.270.0
+aws-cdk.aws-lambda-python-alpha==2.270.0a0
+constructs>=10.0.0,<11.0.0
+python-dotenv==1.0.1

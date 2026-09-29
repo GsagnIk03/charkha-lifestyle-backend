@@ -1,12 +1,17 @@
 fastapi==0.115.0
 mangum==0.18.0
-boto3==1.35.0
 pydantic==2.9.0
 python-jose[cryptography]==3.3.0
 requests==2.32.3
 razorpay==2.0.1
 
-# Dev-only (local uvicorn server) — not needed in the Lambda deployment
-# package; SAM builds from this file too, so keep it split if that starts
-# to matter (e.g. a requirements-dev.txt).
-uvicorn[standard]==0.30.6
+# boto3 is deliberately NOT listed here even though app/db.py imports it:
+# every Lambda Python runtime (3.12 included) ships boto3/botocore
+# preinstalled, so bundling our own copy just adds dead weight to the zip
+# and, more immediately, is extra megabytes `sam build` has to fetch from
+# PyPI on every build. It's still needed to run the app locally (outside
+# Lambda) — see requirements-dev.txt and the "Local setup" instructions in
+# README.md, which install both files.
+#
+# uvicorn also moved out — it's the local dev server, SAM never needs it
+# to build/deploy the Lambda package. See requirements-dev.txt.
