@@ -67,6 +67,17 @@ class CharkhaStack(Stack):
     ) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
+        # allowed_origin may be a single origin or a comma-separated list
+        # (e.g. both the apex and www domains). The FastAPI app reads the
+        # raw comma-joined string itself (ALLOWED_ORIGINS env var below) and
+        # splits it in Python, but every AWS-native "allowed origins" list
+        # (Lambda Function URL CORS, S3 bucket CORS, Cognito callback/logout
+        # URLs) needs an actual list of individually-valid origins — passing
+        # the whole joined string as a single list entry fails deploy with
+        # "isn't a valid origin" the moment more than one origin is
+        # configured, since AWS itself never splits on commas for you.
+        allowed_origins = [o.strip() for o in allowed_origin.split(",") if o.strip()]
+
         # ---------- Database (provisioned, not on-demand — see module docstring) ----------
 
         products_table = dynamodb.Table(
@@ -221,8 +232,8 @@ class CharkhaStack(Stack):
             o_auth=cognito.OAuthSettings(
                 flows=cognito.OAuthFlows(authorization_code_grant=True),
                 scopes=[cognito.OAuthScope.EMAIL, cognito.OAuthScope.OPENID, cognito.OAuthScope.PROFILE],
-                callback_urls=[allowed_origin],
-                logout_urls=[allowed_origin],
+                callback_urls=allowed_origins,
+                logout_urls=allowed_origins,
             ),
             supported_identity_providers=supported_identity_providers,
         )
@@ -284,7 +295,7 @@ class CharkhaStack(Stack):
         function_url = api_function.add_function_url(
             auth_type=_lambda.FunctionUrlAuthType.NONE,  # auth is enforced inside FastAPI via Cognito JWT bearer tokens, not at the URL level
             cors=_lambda.FunctionUrlCorsOptions(
-                allowed_origins=[allowed_origin],
+                allowed_origins=allowed_origins,
                 # NOT HttpMethod.OPTIONS — CDK's HttpMethod enum happens to
                 # list it, but Lambda Function URLs reject it at deploy time
                 # ("OPTIONS is not a valid enum value..."). CORS preflight
@@ -315,7 +326,7 @@ class CharkhaStack(Stack):
 
         # ---------- Product media ----------
 
-        media_bucket = _s3_bucket(self, "MediaBucket", f"charkha-lifestyle-media-{stage}-{self.account}", allowed_origin)
+        media_bucket = _s3_bucket(self, "MediaBucket", f"charkha-lifestyle-media-{stage}-{self.account}", allowed_origins)
 
         media_distribution = cloudfront.Distribution(
             self,
@@ -353,7 +364,7 @@ class CharkhaStack(Stack):
         )
 
 
-def _s3_bucket(scope: Construct, construct_id: str, bucket_name: str, allowed_origin: str) -> s3.Bucket:
+def _s3_bucket(scope: Construct, construct_id: str, bucket_name: str, allowed_origins: list) -> s3.Bucket:
     return s3.Bucket(
         scope,
         construct_id,
@@ -361,7 +372,7 @@ def _s3_bucket(scope: Construct, construct_id: str, bucket_name: str, allowed_or
         block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
         cors=[
             s3.CorsRule(
-                allowed_origins=[allowed_origin],
+                allowed_origins=allowed_origins,
                 allowed_methods=[s3.HttpMethods.GET, s3.HttpMethods.PUT],
                 allowed_headers=["*"],
             )
