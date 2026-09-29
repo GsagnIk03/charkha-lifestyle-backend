@@ -29,7 +29,7 @@ on:
       - "infra/**"
       - "lambda_handler.py"
       - "requirements.txt"
-      - ".github/workflows/deploy-backend.yml"
+      - ".github/workflows/deploy_backend.yaml"
   workflow_dispatch: {} # lets you trigger a redeploy manually from the Actions tab
 
 permissions:
