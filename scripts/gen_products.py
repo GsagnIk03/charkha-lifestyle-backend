@@ -159,6 +159,22 @@ with open(out_path, "w") as f:
     f.write("\n")
 
 print(f"Wrote {len(products)} products to {out_path}")
+
+# Keep infra/seed_products_lambda/seed_data.json (the copy the CDK-deployed
+# seed Custom Resource actually reads at deploy time) in sync with the same
+# data, so there's exactly one generator and no risk of the two drifting
+# apart. json.dumps is fine here (unlike seed_data.py above) since this
+# file is read back with json.load, not imported as Python.
+import json  # noqa: E402
+
+json_out_path = os.path.join(
+    os.path.dirname(__file__), "..", "infra", "seed_products_lambda", "seed_data.json"
+)
+os.makedirs(os.path.dirname(json_out_path), exist_ok=True)
+with open(json_out_path, "w") as f:
+    json.dump(products, f, indent=2)
+print(f"Wrote {len(products)} products to {json_out_path}")
+
 by_cat = {}
 for p in products:
     by_cat[p["category"]] = by_cat.get(p["category"], 0) + 1

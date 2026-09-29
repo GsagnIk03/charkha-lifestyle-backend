@@ -1,0 +1,1268 @@
+[
+  {
+    "product_id": "women-handloom-saree-mustard-2",
+    "name": "Mustard Handloom Saree",
+    "category": "Women",
+    "price": 4550.0,
+    "stock": 57,
+    "description": "An heirloom-leaning handloom saree, woven in chanderi and finished in a muted mustard.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-mustard-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-party-frock-slate-blue",
+    "name": "Slate Blue Party Frock",
+    "category": "Kids",
+    "price": 2300.0,
+    "stock": 23,
+    "description": "Finished in modal, this party frock carries a quiet slate blue tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-party-frock-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-deep-teal",
+    "name": "Deep Teal Handloom Saree",
+    "category": "Women",
+    "price": 6500.0,
+    "stock": 27,
+    "description": "A deep teal handloom saree in georgette, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-statement-necklace-mustard-2",
+    "name": "Mustard Statement Necklace",
+    "category": "Accessories",
+    "price": 1900.0,
+    "stock": 18,
+    "description": "An heirloom-leaning statement necklace, woven in modal and finished in a muted mustard.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-statement-necklace-mustard-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-tunic-top-sand",
+    "name": "Sand Tunic Top",
+    "category": "Women",
+    "price": 1450.0,
+    "stock": 38,
+    "description": "An heirloom-leaning tunic top, woven in cotton and finished in a muted sand.",
+    "image_keys": ["https://picsum.photos/seed/women-tunic-top-sand/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-crew-neck-sweater-saffron",
+    "name": "Saffron Crew Neck Sweater",
+    "category": "Men",
+    "price": 2800.0,
+    "stock": 28,
+    "description": "A saffron crew neck sweater in linen, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-crew-neck-sweater-saffron/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-statement-necklace-rust",
+    "name": "Rust Statement Necklace",
+    "category": "Accessories",
+    "price": 900.0,
+    "stock": 48,
+    "description": "A studio staple: merino wool statement necklace with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-statement-necklace-rust/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-cape-jacket-maroon",
+    "name": "Maroon Cape Jacket",
+    "category": "Women",
+    "price": 4000.0,
+    "stock": 36,
+    "description": "An heirloom-leaning cape jacket, woven in silk and finished in a muted maroon.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-cape-jacket-maroon/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-saffron",
+    "name": "Saffron Handloom Saree",
+    "category": "Women",
+    "price": 7000.0,
+    "stock": 17,
+    "description": "A studio staple: khadi handloom saree with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-saffron/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-charcoal",
+    "name": "Charcoal Dungaree Set",
+    "category": "Kids",
+    "price": 1850.0,
+    "stock": 0,
+    "description": "An heirloom-leaning dungaree set, woven in viscose and finished in a muted charcoal.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-charcoal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wayfarer-sunglasses-indigo",
+    "name": "Indigo Wayfarer Sunglasses",
+    "category": "Accessories",
+    "price": 1500.0,
+    "stock": 5,
+    "description": "A studio staple: viscose wayfarer sunglasses with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wayfarer-sunglasses-indigo/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-tunic-top-olive-2",
+    "name": "Olive Tunic Top",
+    "category": "Women",
+    "price": 2200.0,
+    "stock": 0,
+    "description": "An heirloom-leaning tunic top, woven in cotton-blend and finished in a muted olive.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-tunic-top-olive-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-mustard-3",
+    "name": "Mustard Handloom Saree",
+    "category": "Women",
+    "price": 5600.0,
+    "stock": 11,
+    "description": "An heirloom-leaning handloom saree, woven in georgette and finished in a muted mustard.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-mustard-3/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-leather-belt-blush-pink",
+    "name": "Blush Pink Leather Belt",
+    "category": "Accessories",
+    "price": 900.0,
+    "stock": 6,
+    "description": "Finished in cotton-blend, this leather belt carries a quiet blush pink tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-leather-belt-blush-pink/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-kurta-dusty-rose",
+    "name": "Dusty Rose Kurta",
+    "category": "Men",
+    "price": 2150.0,
+    "stock": 0,
+    "description": "A studio staple: georgette kurta with clean lines and a fit built to last beyond a season.",
+    "image_keys": ["https://picsum.photos/seed/men-kurta-dusty-rose/700/900"],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-structured-clutch-blush-pink",
+    "name": "Blush Pink Structured Clutch",
+    "category": "Accessories",
+    "price": 1850.0,
+    "stock": 54,
+    "description": "Finished in viscose, this structured clutch carries a quiet blush pink tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-structured-clutch-blush-pink/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wayfarer-sunglasses-saffron",
+    "name": "Saffron Wayfarer Sunglasses",
+    "category": "Accessories",
+    "price": 1450.0,
+    "stock": 48,
+    "description": "Soft-structured wayfarer sunglasses in saffron merino wool \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wayfarer-sunglasses-saffron/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-printed-t-shirt-set-ivory",
+    "name": "Ivory Printed T-Shirt Set",
+    "category": "Kids",
+    "price": 950.0,
+    "stock": 51,
+    "description": "Finished in silk, this printed t-shirt set carries a quiet ivory tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-printed-t-shirt-set-ivory/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-maroon-2",
+    "name": "Maroon Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 3300.0,
+    "stock": 43,
+    "description": "Soft-structured palazzo co-ord set in maroon chanderi \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-maroon-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-cotton-chinos-slate-blue",
+    "name": "Slate Blue Cotton Chinos",
+    "category": "Men",
+    "price": 2000.0,
+    "stock": 45,
+    "description": "A slate blue cotton chinos in tussar silk, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-cotton-chinos-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-crew-neck-sweater-saffron-2",
+    "name": "Saffron Crew Neck Sweater",
+    "category": "Men",
+    "price": 2400.0,
+    "stock": 54,
+    "description": "A saffron crew neck sweater in khadi, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-crew-neck-sweater-saffron-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-statement-necklace-sand",
+    "name": "Sand Statement Necklace",
+    "category": "Accessories",
+    "price": 1750.0,
+    "stock": 6,
+    "description": "Finished in georgette, this statement necklace carries a quiet sand tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-statement-necklace-sand/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-crew-neck-sweater-terracotta",
+    "name": "Terracotta Crew Neck Sweater",
+    "category": "Men",
+    "price": 2550.0,
+    "stock": 39,
+    "description": "Soft-structured crew neck sweater in terracotta cotton twill \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-crew-neck-sweater-terracotta/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-ivory",
+    "name": "Ivory Dungaree Set",
+    "category": "Kids",
+    "price": 1600.0,
+    "stock": 12,
+    "description": "A studio staple: linen dungaree set with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-ivory/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-anarkali-suit-onyx-black",
+    "name": "Onyx Black Anarkali Suit",
+    "category": "Women",
+    "price": 4750.0,
+    "stock": 43,
+    "description": "An heirloom-leaning anarkali suit, woven in khadi and finished in a muted onyx black.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-anarkali-suit-onyx-black/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-pyjama-set-emerald",
+    "name": "Emerald Pyjama Set",
+    "category": "Kids",
+    "price": 1100.0,
+    "stock": 36,
+    "description": "A studio staple: handloom cotton pyjama set with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-pyjama-set-emerald/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wool-stole-terracotta",
+    "name": "Terracotta Wool Stole",
+    "category": "Accessories",
+    "price": 1900.0,
+    "stock": 25,
+    "description": "Soft-structured wool stole in terracotta cotton \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wool-stole-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wool-stole-dusty-rose",
+    "name": "Dusty Rose Wool Stole",
+    "category": "Accessories",
+    "price": 2700.0,
+    "stock": 5,
+    "description": "An heirloom-leaning wool stole, woven in modal and finished in a muted dusty rose.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wool-stole-dusty-rose/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-printed-t-shirt-set-dusty-rose-2",
+    "name": "Dusty Rose Printed T-Shirt Set",
+    "category": "Kids",
+    "price": 750.0,
+    "stock": 25,
+    "description": "Finished in denim, this printed t-shirt set carries a quiet dusty rose tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-printed-t-shirt-set-dusty-rose-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-nehru-jacket-saffron",
+    "name": "Saffron Nehru Jacket",
+    "category": "Men",
+    "price": 3350.0,
+    "stock": 37,
+    "description": "A saffron nehru jacket in handloom cotton, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-nehru-jacket-saffron/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-terracotta",
+    "name": "Terracotta Dungaree Set",
+    "category": "Kids",
+    "price": 1350.0,
+    "stock": 25,
+    "description": "Soft-structured dungaree set in terracotta cotton twill \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-party-frock-deep-teal",
+    "name": "Deep Teal Party Frock",
+    "category": "Kids",
+    "price": 2200.0,
+    "stock": 44,
+    "description": "Finished in tussar silk, this party frock carries a quiet deep teal tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-party-frock-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-slate-blue",
+    "name": "Slate Blue Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 4600.0,
+    "stock": 29,
+    "description": "Finished in khadi, this palazzo co-ord set carries a quiet slate blue tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-olive",
+    "name": "Olive Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 3050.0,
+    "stock": 38,
+    "description": "A olive palazzo co-ord set in khadi, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-olive/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-tunic-top-saffron",
+    "name": "Saffron Tunic Top",
+    "category": "Women",
+    "price": 1800.0,
+    "stock": 19,
+    "description": "A studio staple: silk tunic top with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-tunic-top-saffron/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wool-stole-mustard",
+    "name": "Mustard Wool Stole",
+    "category": "Accessories",
+    "price": 2200.0,
+    "stock": 5,
+    "description": "Finished in handloom cotton, this wool stole carries a quiet mustard tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wool-stole-mustard/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-deep-teal-2",
+    "name": "Deep Teal Handloom Saree",
+    "category": "Women",
+    "price": 5550.0,
+    "stock": 3,
+    "description": "Finished in modal, this handloom saree carries a quiet deep teal tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-deep-teal-2/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-denim-jacket-burgundy",
+    "name": "Burgundy Denim Jacket",
+    "category": "Men",
+    "price": 4000.0,
+    "stock": 4,
+    "description": "Finished in linen, this denim jacket carries a quiet burgundy tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-denim-jacket-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-maroon",
+    "name": "Maroon Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 4450.0,
+    "stock": 14,
+    "description": "An heirloom-leaning palazzo co-ord set, woven in tussar silk and finished in a muted maroon.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-maroon/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-formal-trousers-terracotta",
+    "name": "Terracotta Formal Trousers",
+    "category": "Men",
+    "price": 2050.0,
+    "stock": 11,
+    "description": "A studio staple: denim formal trousers with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-formal-trousers-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-wrap-midi-dress-charcoal",
+    "name": "Charcoal Wrap Midi Dress",
+    "category": "Women",
+    "price": 2850.0,
+    "stock": 55,
+    "description": "An heirloom-leaning wrap midi dress, woven in denim and finished in a muted charcoal.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-wrap-midi-dress-charcoal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-onyx-black",
+    "name": "Onyx Black Dungaree Set",
+    "category": "Kids",
+    "price": 1800.0,
+    "stock": 44,
+    "description": "An heirloom-leaning dungaree set, woven in tussar silk and finished in a muted onyx black.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-onyx-black/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-tunic-top-olive",
+    "name": "Olive Tunic Top",
+    "category": "Women",
+    "price": 1950.0,
+    "stock": 29,
+    "description": "Soft-structured tunic top in olive chanderi \u2014 understated, versatile, made to repeat.",
+    "image_keys": ["https://picsum.photos/seed/women-tunic-top-olive/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-terracotta",
+    "name": "Terracotta Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 4450.0,
+    "stock": 31,
+    "description": "Soft-structured palazzo co-ord set in terracotta chanderi \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-kurti-forest-green",
+    "name": "Forest Green Kurti",
+    "category": "Women",
+    "price": 1500.0,
+    "stock": 17,
+    "description": "A forest green kurti in chambray, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-kurti-forest-green/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-maroon-3",
+    "name": "Maroon Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 4450.0,
+    "stock": 17,
+    "description": "A maroon palazzo co-ord set in denim, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-maroon-3/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-sherwani-charcoal",
+    "name": "Charcoal Sherwani",
+    "category": "Men",
+    "price": 9400.0,
+    "stock": 35,
+    "description": "Soft-structured sherwani in charcoal viscose \u2014 understated, versatile, made to repeat.",
+    "image_keys": ["https://picsum.photos/seed/men-sherwani-charcoal/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-party-frock-ivory",
+    "name": "Ivory Party Frock",
+    "category": "Kids",
+    "price": 1900.0,
+    "stock": 26,
+    "description": "A ivory party frock in tussar silk, cut for a considered, everyday silhouette.",
+    "image_keys": ["https://picsum.photos/seed/kids-party-frock-ivory/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-nehru-jacket-burgundy",
+    "name": "Burgundy Nehru Jacket",
+    "category": "Men",
+    "price": 2400.0,
+    "stock": 49,
+    "description": "Finished in modal, this nehru jacket carries a quiet burgundy tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-nehru-jacket-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-crew-neck-sweater-forest-green",
+    "name": "Forest Green Crew Neck Sweater",
+    "category": "Men",
+    "price": 2300.0,
+    "stock": 16,
+    "description": "A forest green crew neck sweater in cotton, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-crew-neck-sweater-forest-green/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-pyjama-set-burgundy",
+    "name": "Burgundy Pyjama Set",
+    "category": "Kids",
+    "price": 1350.0,
+    "stock": 11,
+    "description": "A studio staple: cotton twill pyjama set with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-pyjama-set-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-anarkali-suit-terracotta",
+    "name": "Terracotta Anarkali Suit",
+    "category": "Women",
+    "price": 3200.0,
+    "stock": 25,
+    "description": "Soft-structured anarkali suit in terracotta chanderi \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-anarkali-suit-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-statement-necklace-mustard",
+    "name": "Mustard Statement Necklace",
+    "category": "Accessories",
+    "price": 1200.0,
+    "stock": 10,
+    "description": "Finished in cotton twill, this statement necklace carries a quiet mustard tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-statement-necklace-mustard/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-tailored-shirt-deep-teal",
+    "name": "Deep Teal Tailored Shirt",
+    "category": "Men",
+    "price": 1900.0,
+    "stock": 10,
+    "description": "A studio staple: georgette tailored shirt with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-tailored-shirt-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-formal-trousers-slate-blue",
+    "name": "Slate Blue Formal Trousers",
+    "category": "Men",
+    "price": 2250.0,
+    "stock": 49,
+    "description": "An heirloom-leaning formal trousers, woven in silk and finished in a muted slate blue.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-formal-trousers-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-kurti-deep-teal",
+    "name": "Deep Teal Kurti",
+    "category": "Women",
+    "price": 2150.0,
+    "stock": 43,
+    "description": "Finished in viscose, this kurti carries a quiet deep teal tone that layers easily.",
+    "image_keys": ["https://picsum.photos/seed/women-kurti-deep-teal/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-embroidered-juttis-blush-pink",
+    "name": "Blush Pink Embroidered Juttis",
+    "category": "Accessories",
+    "price": 2000.0,
+    "stock": 16,
+    "description": "A blush pink embroidered juttis in merino wool, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-embroidered-juttis-blush-pink/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-straight-fit-kurta-set-burgundy",
+    "name": "Burgundy Straight-Fit Kurta Set",
+    "category": "Women",
+    "price": 3900.0,
+    "stock": 52,
+    "description": "A burgundy straight-fit kurta set in khadi, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-straight-fit-kurta-set-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-denim-jacket-terracotta",
+    "name": "Terracotta Denim Jacket",
+    "category": "Men",
+    "price": 2950.0,
+    "stock": 56,
+    "description": "An heirloom-leaning denim jacket, woven in denim and finished in a muted terracotta.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-denim-jacket-terracotta/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wool-stole-deep-teal",
+    "name": "Deep Teal Wool Stole",
+    "category": "Accessories",
+    "price": 1800.0,
+    "stock": 54,
+    "description": "An heirloom-leaning wool stole, woven in cotton and finished in a muted deep teal.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wool-stole-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-printed-t-shirt-set-dusty-rose",
+    "name": "Dusty Rose Printed T-Shirt Set",
+    "category": "Kids",
+    "price": 800.0,
+    "stock": 16,
+    "description": "Finished in viscose, this printed t-shirt set carries a quiet dusty rose tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-printed-t-shirt-set-dusty-rose/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-cape-jacket-forest-green",
+    "name": "Forest Green Cape Jacket",
+    "category": "Women",
+    "price": 3850.0,
+    "stock": 47,
+    "description": "A forest green cape jacket in cotton, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-cape-jacket-forest-green/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-ethnic-set-forest-green",
+    "name": "Forest Green Ethnic Set",
+    "category": "Kids",
+    "price": 2050.0,
+    "stock": 23,
+    "description": "A studio staple: cotton-blend ethnic set with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-ethnic-set-forest-green/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-tailored-shirt-maroon",
+    "name": "Maroon Tailored Shirt",
+    "category": "Men",
+    "price": 1850.0,
+    "stock": 48,
+    "description": "A studio staple: silk tailored shirt with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-tailored-shirt-maroon/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-kurti-warm-beige",
+    "name": "Warm Beige Kurti",
+    "category": "Women",
+    "price": 1400.0,
+    "stock": 29,
+    "description": "An heirloom-leaning kurti, woven in khadi and finished in a muted warm beige.",
+    "image_keys": ["https://picsum.photos/seed/women-kurti-warm-beige/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-pyjama-set-sand",
+    "name": "Sand Pyjama Set",
+    "category": "Kids",
+    "price": 850.0,
+    "stock": 47,
+    "description": "An heirloom-leaning pyjama set, woven in tussar silk and finished in a muted sand.",
+    "image_keys": ["https://picsum.photos/seed/kids-pyjama-set-sand/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wayfarer-sunglasses-deep-teal",
+    "name": "Deep Teal Wayfarer Sunglasses",
+    "category": "Accessories",
+    "price": 2350.0,
+    "stock": 48,
+    "description": "An heirloom-leaning wayfarer sunglasses, woven in denim and finished in a muted deep teal.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wayfarer-sunglasses-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-joggers-maroon",
+    "name": "Maroon Joggers",
+    "category": "Men",
+    "price": 1700.0,
+    "stock": 54,
+    "description": "A studio staple: merino wool joggers with clean lines and a fit built to last beyond a season.",
+    "image_keys": ["https://picsum.photos/seed/men-joggers-maroon/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-leather-belt-emerald",
+    "name": "Emerald Leather Belt",
+    "category": "Accessories",
+    "price": 1650.0,
+    "stock": 0,
+    "description": "A studio staple: chanderi leather belt with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-leather-belt-emerald/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-maxi-dress-rust",
+    "name": "Rust Maxi Dress",
+    "category": "Women",
+    "price": 4250.0,
+    "stock": 40,
+    "description": "A rust maxi dress in cotton, cut for a considered, everyday silhouette.",
+    "image_keys": ["https://picsum.photos/seed/women-maxi-dress-rust/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-dupatta-sand",
+    "name": "Sand Dupatta",
+    "category": "Women",
+    "price": 1200.0,
+    "stock": 14,
+    "description": "A studio staple: chambray dupatta with clean lines and a fit built to last beyond a season.",
+    "image_keys": ["https://picsum.photos/seed/women-dupatta-sand/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-deep-teal",
+    "name": "Deep Teal Dungaree Set",
+    "category": "Kids",
+    "price": 1800.0,
+    "stock": 45,
+    "description": "Finished in georgette, this dungaree set carries a quiet deep teal tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-embroidered-juttis-burgundy",
+    "name": "Burgundy Embroidered Juttis",
+    "category": "Accessories",
+    "price": 1800.0,
+    "stock": 28,
+    "description": "Soft-structured embroidered juttis in burgundy khadi \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-embroidered-juttis-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-bandhgala-jacket-charcoal",
+    "name": "Charcoal Bandhgala Jacket",
+    "category": "Men",
+    "price": 5200.0,
+    "stock": 26,
+    "description": "Finished in cotton twill, this bandhgala jacket carries a quiet charcoal tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-bandhgala-jacket-charcoal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-charcoal",
+    "name": "Charcoal Handloom Saree",
+    "category": "Women",
+    "price": 7250.0,
+    "stock": 54,
+    "description": "A charcoal handloom saree in tussar silk, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-charcoal/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-crew-neck-sweater-forest-green-2",
+    "name": "Forest Green Crew Neck Sweater",
+    "category": "Men",
+    "price": 2750.0,
+    "stock": 49,
+    "description": "A studio staple: tussar silk crew neck sweater with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-crew-neck-sweater-forest-green-2/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-wool-stole-charcoal",
+    "name": "Charcoal Wool Stole",
+    "category": "Accessories",
+    "price": 1850.0,
+    "stock": 59,
+    "description": "Soft-structured wool stole in charcoal denim \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-wool-stole-charcoal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-dungaree-set-slate-blue",
+    "name": "Slate Blue Dungaree Set",
+    "category": "Kids",
+    "price": 1700.0,
+    "stock": 30,
+    "description": "Finished in chanderi, this dungaree set carries a quiet slate blue tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-dungaree-set-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-nehru-jacket-olive",
+    "name": "Olive Nehru Jacket",
+    "category": "Men",
+    "price": 2700.0,
+    "stock": 30,
+    "description": "A studio staple: chanderi nehru jacket with clean lines and a fit built to last beyond a season.",
+    "image_keys": ["https://picsum.photos/seed/men-nehru-jacket-olive/700/900"],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-straight-fit-kurta-set-charcoal",
+    "name": "Charcoal Straight-Fit Kurta Set",
+    "category": "Women",
+    "price": 2650.0,
+    "stock": 27,
+    "description": "An heirloom-leaning straight-fit kurta set, woven in cotton-blend and finished in a muted charcoal.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-straight-fit-kurta-set-charcoal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-rust",
+    "name": "Rust Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 3000.0,
+    "stock": 56,
+    "description": "An heirloom-leaning palazzo co-ord set, woven in chambray and finished in a muted rust.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-rust/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-anarkali-suit-forest-green",
+    "name": "Forest Green Anarkali Suit",
+    "category": "Women",
+    "price": 4150.0,
+    "stock": 35,
+    "description": "A studio staple: linen anarkali suit with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-anarkali-suit-forest-green/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-tailored-shirt-burgundy",
+    "name": "Burgundy Tailored Shirt",
+    "category": "Men",
+    "price": 1750.0,
+    "stock": 17,
+    "description": "An heirloom-leaning tailored shirt, woven in denim and finished in a muted burgundy.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-tailored-shirt-burgundy/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-denim-jacket-slate-blue",
+    "name": "Slate Blue Denim Jacket",
+    "category": "Kids",
+    "price": 2150.0,
+    "stock": 5,
+    "description": "A studio staple: georgette denim jacket with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-denim-jacket-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-formal-trousers-sand",
+    "name": "Sand Formal Trousers",
+    "category": "Men",
+    "price": 2450.0,
+    "stock": 26,
+    "description": "Soft-structured formal trousers in sand khadi \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-formal-trousers-sand/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-canvas-tote-bag-warm-beige",
+    "name": "Warm Beige Canvas Tote Bag",
+    "category": "Accessories",
+    "price": 2100.0,
+    "stock": 36,
+    "description": "Soft-structured canvas tote bag in warm beige tussar silk \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-canvas-tote-bag-warm-beige/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-straight-fit-kurta-set-saffron",
+    "name": "Saffron Straight-Fit Kurta Set",
+    "category": "Women",
+    "price": 3750.0,
+    "stock": 9,
+    "description": "A studio staple: silk straight-fit kurta set with clean lines and a fit built to last beyond a season.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-straight-fit-kurta-set-saffron/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-waistcoat-emerald",
+    "name": "Emerald Waistcoat",
+    "category": "Men",
+    "price": 2700.0,
+    "stock": 26,
+    "description": "Finished in chanderi, this waistcoat carries a quiet emerald tone that layers easily.",
+    "image_keys": ["https://picsum.photos/seed/men-waistcoat-emerald/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-handloom-saree-mustard",
+    "name": "Mustard Handloom Saree",
+    "category": "Women",
+    "price": 4200.0,
+    "stock": 22,
+    "description": "An heirloom-leaning handloom saree, woven in khadi and finished in a muted mustard.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-handloom-saree-mustard/700/900"
+    ],
+    "status": "draft",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-formal-trousers-warm-beige",
+    "name": "Warm Beige Formal Trousers",
+    "category": "Men",
+    "price": 2100.0,
+    "stock": 36,
+    "description": "A warm beige formal trousers in denim, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-formal-trousers-warm-beige/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "kids-pyjama-set-dusty-rose",
+    "name": "Dusty Rose Pyjama Set",
+    "category": "Kids",
+    "price": 850.0,
+    "stock": 53,
+    "description": "Finished in georgette, this pyjama set carries a quiet dusty rose tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/kids-pyjama-set-dusty-rose/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-bandhgala-jacket-mustard",
+    "name": "Mustard Bandhgala Jacket",
+    "category": "Men",
+    "price": 6100.0,
+    "stock": 0,
+    "description": "An heirloom-leaning bandhgala jacket, woven in denim and finished in a muted mustard.",
+    "image_keys": [
+      "https://picsum.photos/seed/men-bandhgala-jacket-mustard/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-sherwani-mustard",
+    "name": "Mustard Sherwani",
+    "category": "Men",
+    "price": 8000.0,
+    "stock": 57,
+    "description": "A mustard sherwani in cotton, cut for a considered, everyday silhouette.",
+    "image_keys": ["https://picsum.photos/seed/men-sherwani-mustard/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-palazzo-co-ord-set-emerald",
+    "name": "Emerald Palazzo Co-ord Set",
+    "category": "Women",
+    "price": 2900.0,
+    "stock": 5,
+    "description": "A emerald palazzo co-ord set in khadi, cut for a considered, everyday silhouette.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-palazzo-co-ord-set-emerald/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-joggers-mustard",
+    "name": "Mustard Joggers",
+    "category": "Men",
+    "price": 1650.0,
+    "stock": 18,
+    "description": "A mustard joggers in merino wool, cut for a considered, everyday silhouette.",
+    "image_keys": ["https://picsum.photos/seed/men-joggers-mustard/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-nehru-jacket-rust",
+    "name": "Rust Nehru Jacket",
+    "category": "Men",
+    "price": 2500.0,
+    "stock": 23,
+    "description": "An heirloom-leaning nehru jacket, woven in chanderi and finished in a muted rust.",
+    "image_keys": ["https://picsum.photos/seed/men-nehru-jacket-rust/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-structured-clutch-sand",
+    "name": "Sand Structured Clutch",
+    "category": "Accessories",
+    "price": 2200.0,
+    "stock": 18,
+    "description": "Soft-structured structured clutch in sand cotton twill \u2014 understated, versatile, made to repeat.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-structured-clutch-sand/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "men-kurta-mustard",
+    "name": "Mustard Kurta",
+    "category": "Men",
+    "price": 1850.0,
+    "stock": 6,
+    "description": "A mustard kurta in cotton twill, cut for a considered, everyday silhouette.",
+    "image_keys": ["https://picsum.photos/seed/men-kurta-mustard/700/900"],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "accessories-silk-scarf-deep-teal",
+    "name": "Deep Teal Silk Scarf",
+    "category": "Accessories",
+    "price": 1350.0,
+    "stock": 52,
+    "description": "An heirloom-leaning silk scarf, woven in khadi and finished in a muted deep teal.",
+    "image_keys": [
+      "https://picsum.photos/seed/accessories-silk-scarf-deep-teal/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  },
+  {
+    "product_id": "women-pleated-skirt-slate-blue",
+    "name": "Slate Blue Pleated Skirt",
+    "category": "Women",
+    "price": 2750.0,
+    "stock": 49,
+    "description": "Finished in chambray, this pleated skirt carries a quiet slate blue tone that layers easily.",
+    "image_keys": [
+      "https://picsum.photos/seed/women-pleated-skirt-slate-blue/700/900"
+    ],
+    "status": "live",
+    "last_edited_by": null
+  }
+]

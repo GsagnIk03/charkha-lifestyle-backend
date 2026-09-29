@@ -31,8 +31,9 @@ stage ever holds real customer data.
 from __future__ import annotations
 
 import os
+import time
 
-from aws_cdk import CfnOutput, Duration, RemovalPolicy, Stack
+from aws_cdk import CfnOutput, CustomResource, Duration, RemovalPolicy, Stack
 from aws_cdk import aws_cloudfront as cloudfront
 from aws_cdk import aws_cloudfront_origins as origins
 from aws_cdk import aws_cognito as cognito
@@ -40,6 +41,7 @@ from aws_cdk import aws_dynamodb as dynamodb
 from aws_cdk import aws_iam as iam
 from aws_cdk import aws_lambda as _lambda
 from aws_cdk import aws_s3 as s3
+from aws_cdk import custom_resources as cr
 from aws_cdk.aws_lambda_python_alpha import BundlingOptions, PythonFunction
 from constructs import Construct
 
@@ -98,6 +100,52 @@ class CharkhaStack(Stack):
             read_capacity=5,
             write_capacity=5,
             removal_policy=RemovalPolicy.DESTROY,
+        )
+
+        # ---------- Product catalog seed ----------
+        # Runs as part of `cdk deploy` itself — locally or via CI, same
+        # stack either way — not as a separate script anyone has to
+        # remember to run. See infra/seed_products_lambda/index.py for the
+        # "only seed an empty table" safety logic that makes it safe to
+        # run on every single deploy, forever, without risking an owner's
+        # real edits made through the dashboard.
+
+        seed_products_lambda = _lambda.Function(
+            self,
+            "SeedProductsFunction",
+            runtime=_lambda.Runtime.PYTHON_3_12,
+            handler="index.handler",
+            code=_lambda.Code.from_asset(os.path.join(REPO_ROOT, "infra", "seed_products_lambda")),
+            timeout=Duration.seconds(60),
+            # AWS_REGION is deliberately not set here — it's a reserved
+            # Lambda environment variable name (Lambda sets it
+            # automatically; CloudFormation rejects trying to override it
+            # yourself). index.py reads it via os.environ at runtime.
+            environment={"PRODUCTS_TABLE": products_table.table_name},
+        )
+        products_table.grant_read_write_data(seed_products_lambda)
+
+        seed_products_provider = cr.Provider(
+            self,
+            "SeedProductsProvider",
+            on_event_handler=seed_products_lambda,
+        )
+
+        CustomResource(
+            self,
+            "SeedProductsResource",
+            service_token=seed_products_provider.service_token,
+            properties={
+                # Custom resources only get re-invoked when their own
+                # properties change — without this, CloudFormation would
+                # run the seed Lambda once on the very first deploy and
+                # then never again, even though the handler itself is
+                # cheap/safe to call every time. A fresh value on every
+                # synth forces an event on every deploy; the handler's own
+                # "already has items? skip" check is what actually makes
+                # that safe.
+                "Timestamp": str(time.time()),
+            },
         )
 
         # ---------- Auth ----------
