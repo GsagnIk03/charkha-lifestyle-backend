@@ -187,7 +187,7 @@ class CharkhaStack(Stack):
 
         user_pool_domain = user_pool.add_domain(
             "UserPoolDomain",
-            cognito_domain=cognito.CognitoDomainOptions(domain_prefix=f"charkha-lifestyle-{self.account}"),
+            cognito_domain=cognito.CognitoDomainOptions(domain_prefix=f"charkha-lifestyle-{stage}-{self.account}"),
         )
 
         # Google sign-in is optional — only created if google_client_id is
