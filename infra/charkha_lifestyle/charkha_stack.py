@@ -294,21 +294,18 @@ class CharkhaStack(Stack):
 
         function_url = api_function.add_function_url(
             auth_type=_lambda.FunctionUrlAuthType.NONE,  # auth is enforced inside FastAPI via Cognito JWT bearer tokens, not at the URL level
-            cors=_lambda.FunctionUrlCorsOptions(
-                allowed_origins=allowed_origins,
-                # NOT HttpMethod.OPTIONS — CDK's HttpMethod enum happens to
-                # list it, but Lambda Function URLs reject it at deploy time
-                # ("OPTIONS is not a valid enum value..."). CORS preflight
-                # (OPTIONS) is answered automatically at the platform level;
-                # it's never something you list as an allowed method here.
-                allowed_methods=[
-                    _lambda.HttpMethod.GET,
-                    _lambda.HttpMethod.POST,
-                    _lambda.HttpMethod.PATCH,
-                    _lambda.HttpMethod.DELETE,
-                ],
-                allowed_headers=["content-type", "authorization"],
-            ),
+            # No `cors=` here on purpose. CORS is handled by FastAPI's own
+            # CORSMiddleware (app/main.py) instead — having it configured on
+            # BOTH the Function URL (platform level) and in the app
+            # (framework level) makes every actual response carry TWO
+            # Access-Control-Allow-Origin headers (one added by each layer),
+            # which browsers reject outright as invalid even when both
+            # values are identical: "The 'Access-Control-Allow-Origin'
+            # header contains multiple values ..., but only one is
+            # allowed." Without a `cors=` block here, the Function URL
+            # passes every request — including the OPTIONS preflight —
+            # straight through to the Lambda, and CORSMiddleware answers it
+            # the normal FastAPI way.
         )
 
         products_table.grant_read_write_data(api_function)
