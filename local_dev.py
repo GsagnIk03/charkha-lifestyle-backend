@@ -1,11 +1,12 @@
 """
 Fully offline local run — no AWS account, no Docker, nothing to deploy.
 
-Uses moto to fake DynamoDB entirely in memory, seeds a few sample
-products, and bypasses Cognito auth (you're always treated as a signed-in
-owner — see LOCAL_DEV in app/auth.py). Data resets every time you restart
-this script. This is for clicking through the app only; none of this
-reflects how auth or the database really behave once deployed.
+Uses moto to fake DynamoDB entirely in memory, seeds the 100-product
+catalog from app/seed_data.py, and bypasses Cognito auth (you're always
+treated as a signed-in owner — see LOCAL_DEV in app/auth.py). Data resets
+every time you restart this script. This is for clicking through the app
+only; none of this reflects how auth or the database really behave once
+deployed.
 
 Usage:
     pip install -r requirements.txt -r requirements-dev.txt
@@ -52,56 +53,14 @@ def _create_tables() -> None:
 
 _create_tables()
 
-from app.db import products_table  # noqa: E402
+from app.db import _floats_to_decimal, products_table  # noqa: E402
+from app.seed_data import SEED_PRODUCTS  # noqa: E402
 
-SAMPLE_PRODUCTS = [
-    {
-        "product_id": "p1",
-        "name": "Wrap Midi Dress",
-        "category": "Women",
-        "price": 3150,
-        "stock": 48,
-        "description": "A wrap-front midi dress in washed cotton twill.",
-        "image_keys": [],
-        "status": "live",
-        "last_edited_by": None,
-    },
-    {
-        "product_id": "p2",
-        "name": "Tailored Cotton Shirt",
-        "category": "Men",
-        "price": 1890,
-        "stock": 6,
-        "description": "A crisp, tailored cotton shirt with a clean collar.",
-        "image_keys": [],
-        "status": "live",
-        "last_edited_by": None,
-    },
-    {
-        "product_id": "p3",
-        "name": "Merino Crew Sweater",
-        "category": "Men",
-        "price": 2990,
-        "stock": 32,
-        "description": "A soft, fully-fashioned merino sweater with a ribbed crew neckline.",
-        "image_keys": [],
-        "status": "live",
-        "last_edited_by": None,
-    },
-    {
-        "product_id": "p4",
-        "name": "Pleated Midi Skirt",
-        "category": "Women",
-        "price": 2450,
-        "stock": 21,
-        "description": "A pleated midi skirt in olive twill.",
-        "image_keys": [],
-        "status": "live",
-        "last_edited_by": None,
-    },
-]
-for item in SAMPLE_PRODUCTS:
-    products_table().put_item(Item=item)
+# SEED_PRODUCTS entries are plain dicts (not Pydantic models), so this goes
+# straight to the same float->Decimal conversion to_item() uses internally
+# — moto's DynamoDB, like real DynamoDB, rejects native Python float.
+for item in SEED_PRODUCTS:
+    products_table().put_item(Item=_floats_to_decimal(item))
 
 
 if __name__ == "__main__":
@@ -110,7 +69,7 @@ if __name__ == "__main__":
     from app.main import app
 
     print("\n--- Charkha Lifestyle backend: LOCAL DEV MODE ---")
-    print("In-memory fake DynamoDB (moto), seeded with 4 sample products.")
+    print(f"In-memory fake DynamoDB (moto), seeded with {len(SEED_PRODUCTS)} sample products.")
     print("Auth is bypassed — every request is treated as a signed-in owner.")
     print("Data resets on restart. Never run with LOCAL_DEV=true anywhere real.\n")
 

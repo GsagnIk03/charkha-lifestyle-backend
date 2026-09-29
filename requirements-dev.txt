@@ -1,3 +1,22 @@
+# Everything here is for running the app on your own machine — outside
+# Lambda — whether against real AWS or fully offline. None of it is part
+# of the Lambda deployment package (SAM only ever reads requirements.txt).
+#
+# boto3: Lambda's own Python runtime ships this preinstalled, so it's left
+# out of requirements.txt on purpose (see the comment there) — but running
+# app/db.py locally via `uvicorn` or `local_dev.py` still needs it present
+# in your venv.
+boto3==1.35.0
+
+# uvicorn: the local dev server itself (`uvicorn app.main:app --reload`
+# and local_dev.py both need it); Lambda uses lambda_handler.py/Mangum
+# instead, so it never needs to ship there.
+uvicorn[standard]==0.30.6
+
 # Only needed for local_dev.py (offline mode) and for writing tests later.
-# Not part of the Lambda deployment package.
-moto[dynamodb]==5.0.13
+#
+# Deliberately NOT using the `[dynamodb]` extra — it pulls in a `docker`
+# dependency that's only needed for moto's optional container-based server
+# mode, not the in-memory mock_aws() that local_dev.py uses. Plain `moto`
+# already includes full DynamoDB mocking.
+moto==5.0.13

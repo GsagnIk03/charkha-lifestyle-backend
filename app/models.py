@@ -4,11 +4,27 @@ from datetime import datetime, timezone
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
+from pydantic.alias_generators import to_camel
 
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
+
+
+class CamelModel(BaseModel):
+    """Base for every request/response model.
+
+    Python code and DynamoDB items stay snake_case (product_id, image_keys,
+    ...) but everything that crosses HTTP is camelCase (productId,
+    imageKeys, ...), matching the frontend's api/types.ts. populate_by_name
+    means internal code can still build these with snake_case keyword args
+    (Product(product_id=...)) and .model_dump() still returns snake_case
+    keys for writing to DynamoDB — only the JSON that FastAPI sends/accepts
+    over the wire is affected (response_model_by_alias defaults to True).
+    """
+
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True)
 
 
 class ProductStatus(str, Enum):
@@ -16,7 +32,7 @@ class ProductStatus(str, Enum):
     draft = "draft"
 
 
-class Product(BaseModel):
+class Product(CamelModel):
     product_id: str
     name: str
     category: str
@@ -28,7 +44,7 @@ class Product(BaseModel):
     last_edited_by: Optional[str] = None
 
 
-class ProductCreate(BaseModel):
+class ProductCreate(CamelModel):
     name: str
     category: str
     price: float
@@ -50,13 +66,13 @@ class ChangeRequestStatus(str, Enum):
     rejected = "rejected"
 
 
-class InventoryChangeRequestCreate(BaseModel):
+class InventoryChangeRequestCreate(CamelModel):
     product_id: str
     change_type: ChangeType
     payload: dict
 
 
-class InventoryChangeRequest(BaseModel):
+class InventoryChangeRequest(CamelModel):
     request_id: str
     product_id: str
     submitted_by: str
@@ -69,22 +85,22 @@ class InventoryChangeRequest(BaseModel):
     decided_at: Optional[str] = None
 
 
-class InventoryChangeDecision(BaseModel):
+class InventoryChangeDecision(CamelModel):
     status: ChangeRequestStatus
     note: Optional[str] = None
 
 
-class OrderItem(BaseModel):
+class OrderItem(CamelModel):
     product_id: str
     quantity: int
     size: Optional[str] = None
 
 
-class OrderCreate(BaseModel):
+class OrderCreate(CamelModel):
     items: list[OrderItem]
 
 
-class Order(BaseModel):
+class Order(CamelModel):
     order_id: str
     user_id: str
     items: list[OrderItem]

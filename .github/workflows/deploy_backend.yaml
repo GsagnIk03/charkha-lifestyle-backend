@@ -1,0 +1,88 @@
+name: Deploy backend (CDK)
+
+# Redeploys the AWS CDK stack (Lambda, DynamoDB, Cognito, S3+CloudFront)
+# whenever app/ or infra/ changes on master. `cdk deploy` alone does
+# everything, including bootstrapping the product catalog if the table is
+# still empty (see the "Product catalog seed" Custom Resource in
+# charkha_stack.py) — there's no separate seed step here on purpose, so
+# this workflow does exactly what a local `cdk deploy` does, just
+# triggered by a merge instead of by hand. One-time setup required first —
+# see scripts/setup_github_oidc.sh and the repo secrets/variables below.
+#
+# Required repo secrets (Settings -> Secrets and variables -> Actions):
+#   AWS_DEPLOY_ROLE_ARN   - printed by scripts/setup_github_oidc.sh
+#   GOOGLE_CLIENT_SECRET  - optional, leave the secret unset to skip Google sign-in
+#   RAZORPAY_KEY_SECRET
+#
+# Required repo variables (same screen, "Variables" tab — non-secret):
+#   ALLOWED_ORIGIN   - e.g. https://www.charkhakolkata.com
+#   AWS_REGION       - e.g. ap-south-1
+#   STAGE            - e.g. prod
+#   GOOGLE_CLIENT_ID     - optional
+#   RAZORPAY_KEY_ID
+
+on:
+  push:
+    branches: [master] # this repo's default branch (github.com/GsagnIk03/charkha-lifestyle-backend)
+    paths:
+      - "app/**"
+      - "infra/**"
+      - "lambda_handler.py"
+      - "requirements.txt"
+      - ".github/workflows/deploy-backend.yml"
+  workflow_dispatch: {} # lets you trigger a redeploy manually from the Actions tab
+
+permissions:
+  id-token: write # required for OIDC
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production # optional: set up an "environment" in repo settings to require manual approval before deploy
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install CDK CLI
+        run: npm install -g aws-cdk
+
+      - name: Install CDK app's Python dependencies
+        # Only infra/requirements.txt — this installs what's needed to run
+        # `cdk deploy` itself (aws-cdk-lib, the Lambda-bundling construct).
+        # It does NOT need the Lambda's own runtime deps (root
+        # requirements.txt, e.g. fastapi/mangum) — those get installed
+        # separately, inside a Docker container, by the
+        # aws_lambda_python_alpha construct's own bundling step when it
+        # packages the Lambda zip. ubuntu-latest runners have Docker
+        # preinstalled, so that step needs no extra setup here.
+        run: pip install -r infra/requirements.txt
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: cdk deploy
+        working-directory: infra
+        env:
+          STAGE: ${{ vars.STAGE }}
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          ALLOWED_ORIGIN: ${{ vars.ALLOWED_ORIGIN }}
+          GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          RAZORPAY_KEY_ID: ${{ vars.RAZORPAY_KEY_ID }}
+          RAZORPAY_KEY_SECRET: ${{ secrets.RAZORPAY_KEY_SECRET }}
+        run: cdk deploy --require-approval never --outputs-file cdk-outputs.json
+
+      - name: Show stack outputs
+        working-directory: infra
+        run: cat cdk-outputs.json
